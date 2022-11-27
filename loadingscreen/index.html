@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="saynz">
+    <meta name="description" content="Загрузочный экран MinimalRP">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap">
+    <title>minimalproject.ru</title>
+</head>
+
+<body>
+
+    <audio id="myAudio">
+        <source src="s.ogg" type="audio/ogg">
+    </audio>
+    <script>
+        var x = document.getElementById("myAudio");
+        x.play();
+        x.volume = 0.03;
+    </script>
+    <div style="z-index: 3;">
+        <div id="bg" class="bg_anim">
+        </div>
+        <div id="bg2" class="bg_anim">
+        </div>
+    </div>
+
+    <div style="z-index: 5; display: block; position: fixed; left: 0; right: 0;">
+        <div class="loads"></div>
+        <div class="container">
+            <img class="logo" src="logo.png"><br><br><br>
+            <span class="server">minimalproject.ru</span><br><br>
+            <div id="announcement"></div>
+        </div>
+    </div>
+
+    <script src="js/lib/jquery-3.5.1.min.js"></script>
+    <script src="js/lib/config.js"></script>
+    <script src="js/lib/main.js"></script>
+    <script src="js/lib/background.js"></script>
+    <script src="js/lib/typed.js"></script>
+</body>
+
+</html>

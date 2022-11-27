@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="saynz">
+    <meta name="description" content="Игровой сервер в Garry's Mod / Гаррис мод / ДаркРП">
+    <meta name="keywords"
+      content="сервер,оптимизация,лучший сервер,оч классный,античит,сервер в гаррис мод,гаррис мод,даркрп, DarkRP, Garry's Mod, красивый сервер, красивый">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:title" content="MinimalRP">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Сеть серверов в игре Garry's Mod Medium RolePlay сегмента.">
+    <meta property="og:image"
+      content="https://media.discordapp.net/attachments/761645091596140587/761647058431770634/welcomegifrus.gif?width=1202&height=302">
+    <meta property="og:url"
+      content="https://media.discordapp.net/attachments/761645091596140587/761647058431770634/welcomegifrus.gif?width=1202&height=302">
+    <title>minimalproject.ru</title>
+    <link rel="stylesheet" href="core/css/main.css">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link href="core/css/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <style>
+      * {
+      font-family: 'Nunito', sans-serif;
+      }
+      *,
+      ::after,
+      ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #48bb78;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <?php
+      $data = json_decode(file_get_contents('https://api.steampowered.com/IGameServersService/GetServerList/v1/?filter=\appid\4000\addr\194.147.90.38:27015&limit=5000&key='));
+      $main = $data->response->servers[0];
+      $name = $main->name;
+      $address = $main->addr;
+      $version = $main->version;
+      $players = $main->players;
+      $max_players = $main->max_players;
+      $map = $main->map;
+      $bots = $main->bots;
+      ?> -->
+    <div class="preloader">
+      <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
+    <!-- <div class="block lg:hidden">
+      <button class="flex items-center px-5 py-4 border rounded text-white border-white hover:text-blue-darkest hover:bg-white  "
+        onclick="navburger()">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      	<title>Меню</title>
+      	<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+       </div> -->
+    <div class="overflow-hidden" id="head">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="z-10 pb-8 pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-16">
+          <nav class="pt-4 px-4 px-6 lg:px-8">
+            <div class="container mx-auto">
+              <div class="sm:flex justify-around w-full hidden lg:block flex-grow lg:flex lg:items-center lg:w-auto "
+                id="nav">
+                <a href="#" aria-label="Home"> <img class="h-8 w-auto sm:h-10" src="img/logo.svg"
+                  alt="Logo"> </a>
+                <ul class="text-gray-400 sm:self-center text-xl">
+                  <!-- <li class="sm:inline-block"> <a href="javascript://0" onclick="slowScroll('#head')" class="p-3 hover:text-white hover:bg-gray-700">Главное</a> </li> -->
+                  <!-- <li class="sm:inline-block"> <a href="#" class="p-3 hover:text-white hover:bg-gray-700">Сервера</a> </li> -->
+                  <li class="inline-block"> <a href="/holidays"
+                    class="p-3 hover:text-white hover:bg-gray-700">Скидки</a> </li>
+                  <li class="inline-block"> <a href="/donate"
+                    class="p-3 hover:text-white hover:bg-gray-700">Донат</a> </li>
+                  <!-- <li class="inline-block"> <a href="/faq"
+                    class="p-3 hover:text-white hover:bg-gray-700">FAQ</a> </li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- 				<img src="img/backon.jpg" alt="backimage" style="width: 1250px; height: 500px; position: absolute; z-index: -1; vertical-align: middle;display: block; margin-top: 70px; margin-left: 15px"> -->
+          <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div class="sm:text-center">
+              <h2
+                class="text-4xl tracking-tight leading-10 font-extrabold text-green-600 sm:text-5xl sm:leading-none md:text-6xl " style="text-shadow: 0 0 50px #48bb78">
+                MinimalRP
+              </h2>
+              <h3 class="text-sm tracking-tight font-bold text-gray-600"> <?php echo "Игроков: $players / $max_players"; ?> </h3>
+              <p
+                class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-4xl sm:mx-auto md:mt-5 md:text-xl">
+                Лучший выбор среди MediumRP-серверов в игре Garry's Mod
+              </p>
+              <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+                <div class="rounded-md"> <a href="steam://connect/194.147.90.38"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10 ">
+                  Подключиться 🎉
+                  </a> 
+                </div>
+                <!-- <div class="mt-3 sm:mt-0 sm:ml-3"> <a href="#" onclick="toggle();"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-green-700 bg-green-100 hover:text-green-600 hover:bg-green-50 focus:outline-none focus:shadow-outline-green focus:border-green-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                  Обзор сервера
+                  </a> -->
+                <!-- <div class="max-w-5xl mx-auto text-white py-4"> <span
+                  class="floateff text-bold inline-block px-2 rounded-full bg-green-700 py-1"><span
+                  	class="bg-green-500 uppercase inline-block px-2 rounded-full mr-1">•</span>Весеннее
+                  обновление уже на сервере!</span>
+                  </div> -->
+              </div>
+            </div>
+        </div>
+        </main>
+      </div>
+      <!-- <div
+        class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 planet mt-44 max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 text-gray-500">
+        <div class="serverblock">
+        	<p>Сервер №2</p>
+        	<p>0 / 80</p>
+        </div>
+        </div> -->
+      <div class="bubl"></div>
+      <div class="palef">
+        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 
+              58-18 88-18s
+              58 18 88 18
+              58-18 88-18
+              58 18 88 18
+              v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#00bf95" />
+            <use xlink:href="#gentle-wave" x="50" y="3" fill="#00bf95" />
+            <use xlink:href="#gentle-wave" x="50" y="6" fill="#00bf95" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="p-1">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8" id="about-me">
+        <div class="lg:text-center">
+          <h3
+            class="mt-24 text-3xl leading-8 font-extrabold tracking-tight text-green-600 sm:text-4xl sm:leading-10">
+            Почему мы?
+          </h3>
+          <p class="mt-4 mb-12 text-xl leading-7 text-gray-500 lg:mx-auto"> Наш игровой сервер нацелен на среднюю
+            отыгровку реализма с RPG элементами. Мы предлагаем вам сервер, который реализован для игроков с
+            добротной оптимизацией, балансом и множество разных профессий со своими системами! А также никаких
+            <s> донат
+            оружий </s> или <s> донат привилегий </s>
+          </p>
+        </div>
+        <div class="mt-10">
+          <ul class="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+            <li>
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg leading-6 font-medium text-white" style="text-shadow: 0 0 30px #48bb78">Администрация</h4>
+                  <p class="mt-2 text-base leading-6 text-gray-500"> Мы прилагаем немало усилий, для
+                    того,
+                    что бы игрокам был приятен любой из наших администраторов, чтобы нашу
+                    администрацию
+                    не различали на хороших и плохих. 
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="mt-10 md:mt-0">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg leading-6 font-medium text-white" style="text-shadow: 0 0 30px #48bb78">Целеустремленность</h4>
+                  <p class="mt-2 text-base leading-6 text-gray-500">MinimalRP всегда готов развиваться
+                    и
+                    становиться лучше, мы работаем каждый день, что бы обеспечить стабильную работу
+                    сервера. 
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="mt-10 md:mt-0">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg leading-6 font-medium text-white" style="text-shadow: 0 0 30px #48bb78">Игроки</h4>
+                  <p class="mt-2 text-base leading-6 text-gray-500"> Мы стараемся фильтровать трафик
+                    наших
+                    игроков, отсеивая неадекватную сторону комьюнити, если ты именно тот игрок,
+                    который
+                    может дополнить и улучшить наше комьюнити, скорее присоединяйся, мы ценим таких
+                    игроков.
+                </div>
+              </div>
+            </li>
+            <li class="mt-10 md:mt-0">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg leading-6 font-medium text-white" style="text-shadow: 0 0 30px #48bb78">Атмосфера</h4>
+                  <p class="mt-2 text-base leading-6 text-gray-500"> Постоянные ивенты на сервере,
+                    частые
+                    конкурсы, крупные заскриптованные мероприятия, собрания игроков в Discord
+                    сервере
+                    для прямого контакта с владельцами проекта не дадут вам устать от однообразия.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- PIZZA -->
+    <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+      <div>
+        <a title="Buy me a pizza" href="https://minimalproject.ru/donate/" target="_blank"
+          class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <img class="object-cover object-center w-full h-full rounded-full"
+          src="https://img.icons8.com/emoji/48/000000/pizza-emoji.png" />
+        </a>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <div
+      class="mt-20 max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200">
+      <ul class="mb-4 md:order-1 md:ml-4 md:mb-0 nav">
+        <li>
+          <a class="nav items-center text-green-600 hover:text-green-900 bg-green hover:bg-green-700 rounded-full shadow transition duration-150 ease-in-out"
+            aria-label="VK" href="https://vk.com/minimalofficialproject" style="outline: none;"> <img
+            src="img/vk.png" alt="vk" style="width: 32px; height: 32px;"> </a>
+        </li>
+        <li class="ml-4">
+          <a class="nav items-center text-green-600 hover:text-gray-900 bg-green hover:bg-green-700 rounded-full shadow transition duration-150 ease-in-out"
+            aria-label="Steam" href="https://steamcommunity.com/groups/minimalproject" style="outline: none;">
+          <img src="img/steam.png" alt="steam" style="width: 32px; height: 32px;"> </a>
+        </li>
+        <li class="ml-4">
+          <a class="nav items-center text-green-600 hover:text-green-900 bg-green hover:bg-green-700 rounded-full shadow transition duration-150 ease-in-out"
+            aria-label="Discord" href="https://discord.gg/gpkV6KNAGU" style="outline: none;"> <img
+            src="img/discord.png" alt="discord" style="width: 32px; height: 32px;"> </a>
+        </li>
+      </ul>
+      <div class="text-sm text-gray-600 mr-4 nav"><a class="text-blue-600 hover:underline" href="javascript://0"
+        onclick="slowScroll('#head')" style="outline: none; padding-right: 5px;"> minimalproject.ru </a> /
+        Вечно
+        молодые 💚 
+      </div>
+    </div>
+    <script src="core/jquery/jquery3.5.1.js"></script>
+    <script src="core/other.js"></script>
+  </body>

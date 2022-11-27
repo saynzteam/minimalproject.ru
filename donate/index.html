@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="saynz">
+    <meta name="description" content="Игровой сервер в Garry's Mod / Гаррис мод / ДаркРП">
+    <meta name="keywords"
+      content="сервер,оптимизация,лучший сервер,оч классный,античит,сервер в гаррис мод,гаррис мод,даркрп, DarkRP, Garry's Mod, красивый сервер, красивый">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta property="og:title" content="MinimalRP">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Сеть серверов в игре Garry's Mod Medium RolePlay сегмента.">
+    <meta property="og:image"
+      content="https://media.discordapp.net/attachments/761645091596140587/761647058431770634/welcomegifrus.gif?width=1202&height=302">
+    <meta property="og:url"
+      content="https://media.discordapp.net/attachments/761645091596140587/761647058431770634/welcomegifrus.gif?width=1202&height=302">
+    <title>Донат</title>
+    <link rel="stylesheet" href="../core/css/main.css">
+    <link rel="shortcut icon" href="../core/img/logo.svg" type="image/x-icon">
+    <link href="../core/css/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../core/css/slick.css" />
+    <style>
+      * {
+      font-family: 'Nunito', sans-serif;
+      }
+      *,
+      ::after,
+      ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #48bb78;
+      }
+      .carousel-color {
+      background-color: rgba(0, 0, 0, 0.5);
+      }
+      .carousel-open:checked+.carousel-item {
+      position: static;
+      opacity: 100;
+      }
+      .carousel-item {
+      -webkit-transition: opacity 0.6s ease-out;
+      transition: opacity 0.6s ease-out;
+      }
+      #carousel-1:checked~.control-1,
+      #carousel-2:checked~.control-2,
+      #carousel-3:checked~.control-3 {
+      display: block;
+      }
+      .carousel-indicators {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+      }
+      #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+      #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+      #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+      color: #2b6cb0;
+      }
+      .dropdown:hover>.dropdown-content {
+      display: block;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+      font-family: "slick";
+      font-size: 70px;
+      line-height: 1;
+      color: #48bb78;
+      opacity: 0.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      }
+      .slick-prev:before {
+      content: "‹";
+      }
+      [dir="rtl"] .slick-prev:before {
+      content: "›";
+      }
+      [dir="rtl"] .slick-next {
+      left: -10px;
+      top: 70px;
+      right: auto;
+      }
+      .slick-next:before {
+      content: "›";
+      }
+      [dir="rtl"] .slick-next:before {
+      content: "‹";
+      }
+      .hidden {
+      display: none;
+      }
+      .not-hidden {
+      display: block;
+      animation-name: klass;
+      animation-duration: 0.5s;
+      }
+      @keyframes klass {
+      0% {
+      opacity: 0;
+      }
+      100% {
+      opacity: 1;
+      }
+      }
+      .bg-card-200 {
+      background-color: #29282C;
+      }
+      .card-skidka {
+      padding-left: 4.27rem;
+      padding-right: 4.27rem;
+      }
+      .card-no-skidka {
+      padding-left: 3.8rem;
+      padding-right: 3.8rem;
+      }
+      .kpx-14 {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      }
+      @media (max-width: 1024px) {
+      .card-skidka {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      }
+      .card-no-skidka {
+      padding-left: 2.1rem;
+      padding-right: 2.1rem;
+      }
+      .card-dskidka {
+      padding-left: 0.1rem;
+      padding-right: 0rem;
+      }
+      .card-no-dskidka {
+      padding-left: 1.1rem;
+      padding-right: 1rem;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PRELOAD -->
+    <div class="preloader">
+      <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
+    <!-- NAVBAR -->
+    <div class="overflow-hidden" id="head">
+    <div class="max-w-screen-xl mx-auto">
+    <div class="z-10 pb-8 pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-16">
+    <nav class="pt-4 px-4 px-6 lg:px-8">
+      <div class="container mx-auto">
+        <div class="flex justify-around w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto "
+          id="nav">
+          <a href="https://minimalproject.ru" aria-label="Home"> <img class="h-8 w-auto h-10"
+            src="../img/logo.svg" alt="Logo"> </a>
+          <ul class="text-gray-400 self-center text-xl">
+            <li class="inline-block"> <a href="/"
+              class="p-3 hover:text-white hover:bg-gray-700">Главное</a> </li>
+            <li class="inline-block"> <a href="/holidays"
+              class="p-3 hover:text-white hover:bg-gray-700">Скидки</a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- START -->
+    <main class="w-full py-10">
+      <div class="text-center mb-10">
+        <h1 class="font-bold text-3xl mb-2 text-green-600">Подписка ⚡</h1>
+        <h4 class="text-gray-600">Данная подписка сделает ваш игровой процесс более быстрым и менее
+          нудным
+        </h4>
+      </div>
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row px-2 md:px-0">
+        <div
+          class="w-full md:w-1/3 bg-white rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 md:mr-4 mb-10 md:mb-0">
+          <h3 class="text-gray-600 text-lg">Minimal+</h3>
+          <p class="text-gray-600 mt-1"><span class="font-bold text-black text-4xl">196 ₽</span> / 1
+            месяц 
+          </p>
+          <p class="text-sm text-gray-600 mt-2">Подойдёт для тех, кто хочет протестировать. </p>
+          <div class="text-sm text-gray-600 mt-4">
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к
+              привилегированным профессиям
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Cпециальные улучшения
+              или дополнительный ассортимент для профессий Самогонщика, Гровера, Токен-майнера
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Дополнительные слоты
+              в инвентаре и в банке
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Музыкальная
+              магнитола, где вы можете поставить музыку
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> x1.5 бонус за
+              выполнение миссий
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к покупке
+              minimal+ транспорта
+            </p>
+          </div>
+          <button
+            class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+            onclick="ModalOpen()">Выбрать</button>
+        </div>
+        <div
+          class="w-full md:w-1/3 text-white bg-green-500 rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 md:mr-4 mb-10 md:mb-0">
+          <h3 class="text-lg">Minimal+</h3>
+          <p class="mt-1"><span class="font-bold text-4xl">696 ₽</span> / 6 месяцев</p>
+          <p class="text-sm opacity-75 mt-2">Самый популярный выбор среди игроков, который позволит
+            полноценно насладиться игровым процессом и выделит среди толпы. 
+          </p>
+          <div class="text-sm text-white mt-4">
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к
+              привилегированным профессиям
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Cпециальные улучшения
+              для профессий
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Дополнительные слоты
+              в инвентаре и в банке
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к созданию
+              собственной организации
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Скидки на покупку
+              профессий и оружий
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Скидки на все платные
+              машины
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> x1.5 бонус за
+              выполнение миссий
+            </p>
+          </div>
+          <button
+            class="w-full text-white-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+            onclick="ModalOpen()">Выбрать</button>
+        </div>
+        <div
+          class="w-full md:w-1/3 bg-white rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 mb-10 md:mb-0">
+          <h3 class="text-gray-600 text-lg">Minimal+</h3>
+          <p class="text-gray-600 mt-1"><span class="font-bold text-black text-4xl">366 ₽</span> / 3
+            месяца 
+          </p>
+          <p class="text-sm text-gray-600 mt-2">Самый летний набор из всех. </p>
+          <div class="text-sm text-gray-600 mt-4">
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к
+              привилегированным профессиям
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Cпециальные улучшения
+              для профессий
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Дополнительные слоты
+              в инвентаре и в банке
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Доступ к созданию
+              собственной организации
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Скидки на покупку
+              профессий и оружий
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Скидки на все платные
+              машины
+            </p>
+            <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> x1.5 бонус за
+              выполнение миссий
+            </p>
+          </div>
+          <button
+            class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+            onclick="ModalOpen()">Выбрать</button>
+        </div>
+      </div>
+      <!-- 1 YEAR -->
+      <div class="container mx-auto my-5">
+        <div
+          class="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72 mx-2">
+          <div class="z-0 order-1 md:order-2 w-full md:w-2/5 h-80 md:h-full ">
+            <div class="absolute inset-0 w-full h-full object-fill object-center rounded-lg bg-green-400 bg-opacity-30 bg-cover"
+              style="background-image: url('papich-arthas.gif'); background-blend-mode: multiply; background-position: 450px -100px; background-repeat: no-repeat;">
+            </div>
+            <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-white -ml-12"
+              viewBox="0 0 100 100" preserveAspectRatio="none">
+              <polygon points="50,0 100,0 50,100 0,100" />
+            </svg>
+          </div>
+          <div class="z-10 order-2 md:order-1 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
+            <div
+              class="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
+              <h4 class=" md:block text-xl text-gray-600">Minimal+</h4>
+              <h3 class=" md:block text-2xl text-gray-700"><span
+                class="font-bold text-black text-4xl">1106 ₽</span> / 12 месяцев</h3>
+              <p class="text-gray-600 text-justify">Имеет те же возможности, что и в другие сроки,
+                но в данном пакете вы не только экономите, но и выделитесь покупкой подписки на
+                1 год!
+              </p>
+              <button
+                class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                onclick="ModalOpen()">Выбрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+      <!-- PRIVATE JOB -->
+      <div class="text-center mb-10 mt-40">
+        <h1 class="font-bold text-3xl mb-2 text-green-600">Индивидуальный товар 👑</h1>
+        <h4 class="text-gray-600">Хочешь порадовать не только себя, но и друзей? <br> Тогда данный набор
+          для
+          вас.
+        </h4>
+      </div>
+      <div class="z-30 relative items-center justify-center w-full h-full overflow-auto rounded-3xl">
+        <div class="shadow-2xl rounded-3xl w-full h-full bg-cover bg-center" style=" 
+          background-image: 
+          url('../img/backon.jpg');">
+          <div class="grid grid-cols-12 gap-1">
+            <div
+              class="relative my-6 px-8 col-span-12 sm:col-span-12 md:col-span-7 lg:col-span-7 xxl:col-span-7">
+              <div class="border-l-4 border-gray-400 py-20 px-5 mx-2">
+                <p class="italic text-white text-xl md:text-4xl lg:text-6xl uppercase text-center font-bold animate__lightSpeedInRight"
+                  style='font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji !important'>
+                  личная профессия 
+                </p>
+              </div>
+              <div class="text-white font-semibold text-xl mb-4">2490 ₽</div>
+              <div class="absolute border-gray-400 border-t-4 bottom-0 py-1 px-4 w-4/5"></div>
+            </div>
+            <div class="col-span-12 sm:col-span-12 md:col-span-5 lg:col-span-5 xxl:col-span-5">
+              <div
+                class="relative bg-green-500 h-full md:h-96 w-full bg-opacity-50 rounded-tr-lg rounded-br-lg">
+                <div class="p-8">
+                  <p class="text-white text-xs md:text-sm lg:text-xl mb-4 font-bold"> Создание
+                    индивидуальной профессии для вашей организации. 
+                  </p>
+                  <hr>
+                  <br>
+                  <p class="text-white text-sm md:text-sm lg:text-xl mb-4"> Вы сможете играть
+                    на собственной гражданской профессии, которая в отличии от других будет
+                    иметь собственную модель, оружие при спавне и выбранный вами список
+                    людей с доступом к ней! 
+                  </p>
+                  <div class="bottom-0 absolute p-2 items-center justify-center">
+                    <div
+                      class="py-2 px-4 bg-gray-900 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+                      <a
+                        href="https://vk.com/minimalofficialproject?w=product-177241194_5689422%2Fquery">ПОДРОБНЕЕ</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- JOBS -->
+      <div class="text-center mb-10 mt-40">
+        <h1 class="font-bold text-3xl mb-2 text-green-600">Профессии 👤</h1>
+        <h4 class="text-gray-600">Если же игроку не по карману целая подписка, то он может выбрать
+          отдельно интересующую профессию.
+        </h4>
+      </div>
+      <!-- 1 вариант без скидки -->
+      <div class="grid grid-rows-none" id="slickview">
+        <div class="pt-10 max-w-screen-sm md:w-2/4 mx-auto">
+          <div class="flex flex-row space-y-2 items-center justify-center h-full rounded-xl space-x-15 rounded-3xl mr-4 ml-4"
+            style="background: linear-gradient(to right, #29282C, 85%, #48bb78);">
+            <div class="w-auto"> <img class="flex-1 h-full" height="250" width="300"
+              src="img/hacker.png" />
+            </div>
+            <div class="w-2/3">
+              <p class="w-full text-2xl font-semibold text-white">Хакер</p>
+              <p class="w-full pb-4 text-sm tracking-wide leading-tight text-white"> Умелый и
+                преуспевший GLua-разработчик с надежным телефоном для взлома:
+                <br>Кейпадов / Камер / Света / Кофе-машин / Машин.
+              </p>
+              <div class="rounded w-2/3">
+                <div class="dropdown inline-block relative mr-96 lg:absolute lg:mr-px">
+                  <button
+                    class="carousel-color text-white font-semibold py-2 inline-flex items-center rounded-t-3xl whitespace-nowrap text-center card-no-skidka"><span>Выберите
+                  план</span><span
+                    class="fas fa-caret-down mr-2 ml-1"></span></button>
+                  <ul
+                    class="dropdown-content absolute hidden text-gray-700 text-center rounded-2xl">
+                    <li><a class="carousel-color hover:bg-green-900 py-2 px-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 146 ₽</span> / 1
+                      месяц</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 px-14 lg:px-16 card-no-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 326 ₽</span> / 3
+                      месяца</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 px-14 lg:px-16 card-no-dskidka block whitespace-no-wrap text-gray-400 rounded-b-3xl"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 536 ₽</span> / 6
+                      месяцев</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Бирка скидки -->
+        <!-- <span
+          class="absolute py-2 px-4 text-sm text-white top-0 right-0 bg-red-600 rounded-md transform translate-x-2 -translate-y-3 shadow-xl"><i
+          	class="fa fa-percent" aria-hidden="true"></i></span> -->
+        <!-- 2 вариант со скидкой -->
+        <div class="pt-10 max-w-screen-sm md:w-2/4 mx-auto">
+          <div class="flex flex-row space-y-2 items-center justify-center h-full rounded-xl space-x-15 rounded-3xl mr-4"
+            style="background: linear-gradient(to right, #29282C, 85%, #48bb78);">
+            <div class="w-auto"> <img class="flex-1 h-full" height="250" width="300"
+              src="img/gromila2.png" />
+            </div>
+            <div class="w-2/3">
+              <p class="w-full text-2xl font-semibold text-white">Громила</p>
+              <p class="w-full text-sm tracking-wide leading-tight text-white"> Вы бандит
+                более высокого ранга тем самым обладаете более мощной силой и крупным
+                телосложением.
+                <br>
+                <br>
+              </p>
+              <div class="rounded w-2/3">
+                <div class="dropdown inline-block relative mr-96 lg:absolute lg:mr-px">
+                  <span
+                    class="absolute py-2 px-4 text-sm text-white top-0 right-0 bg-red-600 rounded-md transform translate-x-2 -translate-y-3 shadow-xl"><i
+                    class="fa fa-percent" aria-hidden="true"></i></span>
+                  <button
+                    class="carousel-color text-white font-semibold py-2 inline-flex items-center rounded-t-3xl whitespace-nowrap text-center card-skidka"><span>Выберите
+                  план</span><span
+                    class="fas fa-caret-down mr-2 ml-1"></span></button>
+                  <ul
+                    class="dropdown-content absolute hidden text-gray-700 text-center rounded-2xl">
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 146 ₽</span> / 1
+                      месяц</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 326 ₽</span> / 3
+                      месяца</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400 rounded-b-3xl"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"><span
+                      class="font-bold text-gray-600 text-base line-through">652
+                      ₽</span> 396 ₽</span> / 6 месяцев</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Дальше уже по накатанной -->
+        <div class="pt-10 max-w-screen-sm md:w-2/4 mx-auto">
+          <div class="flex flex-row space-y-2 items-center justify-center h-full rounded-xl space-x-15 rounded-3xl mr-4"
+            style="background: linear-gradient(to right, #29282C, 85%, #48bb78);">
+            <div class="w-auto"> <img class="flex-1 h-full" height="250" width="300"
+              src="img/manager.png" />
+            </div>
+            <div class="w-2/3">
+              <p class="w-full text-2xl font-semibold text-white">Менеджер казино</p>
+              <p class="w-full pb-4 text-sm tracking-wide leading-tight text-white"> Вы успешный
+                предприниматель в сфере азартных игр, расставляйте свои игровые TV-казино по
+                городу и собирайте с них деньги. 
+              </p>
+              <div class="rounded w-2/3">
+                <div class="dropdown inline-block relative mr-96 lg:absolute lg:mr-px">
+                  <button
+                    class="carousel-color text-white font-semibold py-2 inline-flex items-center rounded-t-3xl whitespace-nowrap text-center card-no-skidka"><span>Выберите
+                  план</span><span
+                    class="fas fa-caret-down mr-2 ml-1"></span></button>
+                  <ul
+                    class="dropdown-content absolute hidden text-gray-700 text-center rounded-2xl">
+                    <li><a class="carousel-color hover:bg-green-900 py-2 lg:px-16 card-no-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 86 ₽</span> / 1
+                      месяц</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 lg:px-16 card-no-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 176 ₽</span> / 3
+                      месяца</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 lg:px-16 card-no-dskidka block whitespace-no-wrap text-gray-400 rounded-b-3xl"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 246 ₽</span> / 6
+                      месяцев</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-10 max-w-screen-sm md:w-2/4 mx-auto">
+          <div class="flex flex-row space-y-2 items-center justify-center h-full rounded-xl space-x-15 rounded-3xl mr-4"
+            style="background: linear-gradient(to right, #29282C, 85%, #48bb78);">
+            <div class="w-auto"> <img class="flex-1 h-full" height="250" width="300"
+              src="img/tokenminer.png" />
+            </div>
+            <div class="w-2/3">
+              <p class="w-full text-2xl font-semibold text-white">Токен-майнер</p>
+              <p class="w-full pb-8 text-sm tracking-wide leading-tight text-white"> Вы очень
+                хорошо разбираетесь в серверах и уже очень успешны в финансовых делах,
+                зарабатывайте деньги продавая токены.
+                <br>
+              </p>
+              <div class="rounded w-2/3">
+                <div class="dropdown inline-block relative mr-96 lg:absolute lg:mr-px">
+                  <span
+                    class="absolute py-2 px-4 text-sm text-white top-0 right-0 bg-red-600 rounded-md transform translate-x-2 -translate-y-3 shadow-xl"><i
+                    class="fa fa-percent" aria-hidden="true"></i></span>
+                  <button
+                    class="carousel-color text-white font-semibold py-2 inline-flex items-center rounded-t-3xl whitespace-nowrap text-center card-skidka"><span>Выберите
+                  план</span><span
+                    class="fas fa-caret-down mr-2 ml-1"></span></button>
+                  <ul
+                    class="dropdown-content absolute hidden text-gray-700 text-center rounded-2xl">
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 146 ₽</span> / 1
+                      месяц</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"> 276 ₽</span> / 3
+                      месяца</a>
+                    </li>
+                    <li><a class="carousel-color hover:bg-green-900 py-2 kpx-14 lg:px-16 card-dskidka block whitespace-no-wrap text-gray-400 rounded-b-3xl"
+                      onclick="ModalOpen()"><span
+                      class="font-bold text-gray-200 text-base"><span
+                      class="font-bold text-gray-600 text-base line-through">596
+                      ₽</span> 456 ₽</span> / 6 месяцев</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- OTHER -->
+    <div class="text-center mb-10 mt-30">
+      <h1 class="font-bold text-3xl mb-2 text-green-600">Остальное ⭐</h1>
+      <h4 class="text-gray-600"> Оставшиеся товары, которые не относятся к категориям выше
+      </h4>
+    </div>
+    <div class="relative flex lg:flex-col justify-center ">
+      <div class="grid mt-8  gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="img/rubles.png" alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Игровая валюта
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-3xl">100 000<i
+                    class="fas fa-coins pl-3 fa-xs"></i></h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">190 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Мгновенно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="img/rubles.png" alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Игровая валюта
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-3xl">500 000<i
+                    class="fas fa-coins pl-3 fa-xs"></i></h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">349 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Мгновенно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="img/rubles.png" alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Игровая валюта
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-3xl">700 000<i
+                    class="fas fa-coins pl-3 fa-xs"></i></h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">449 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Мгновенно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="img/toolgun.png" alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Инструмент
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-2xl">Advanced Dublicator
+                    v2
+                  </h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">150 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Бесконечно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1200px-Infobox_info_icon.svg.png"
+                  alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Дополнительная возможность
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-2xl">Говорилка</h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">400 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Бесконечно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:flex-col">
+          <div class="bg-card-200 shadow-md  rounded-3xl p-4">
+            <div class="flex-none lg:flex">
+              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1200px-Infobox_info_icon.svg.png"
+                  alt="Just a flower"
+                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+              </div>
+              <div class="flex-auto ml-3 justify-evenly py-2">
+                <div class="flex flex-wrap ">
+                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                    Дополнительная возможность
+                  </div>
+                  <h2 class="flex-auto font-medium text-white text-2xl">+50 пропов к лимиту
+                  </h2>
+                </div>
+                <div class="flex pb-3  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-shopping-cart mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">120 ₽</p>
+                  </div>
+                  <div class="flex-1 inline-flex items-center">
+                    <span class="fas fa-info mr-2 ml-1 text-gray-400"></span>
+                    <p class="text-gray-400">Бесконечно</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="flex space-x-3 text-sm font-medium">
+                  <div class="flex-auto flex space-x-3">
+                    <button
+                      class="w-full text-green-700 border border-green-700 rounded hover:bg-green-500 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4"
+                      onclick="ModalOpen()">Выбрать</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END -->
+      </div>
+    </div>
+    <!-- Дискорд -->
+    <div class="mt-20 max-w-screen-xl mx-auto md:flex md:items-center md:justify-around  py-4 md:py-8 max-w-screen-lg shadow-2xl rounded-lg border border-blue-700 mx-auto text-center py-12 mt-4"
+      style="background-image: url(discord-back.jpg);">
+      <h2
+        class="text-3xl leading-9 font-bold tracking-tight text-white sm:text-4xl sm:leading-10 xl:ml-10">
+        Присоединись к нашему сообществу в <span class="text-blue-700">DISCORD</span><i
+          class="ml-4 fab fa-1x fa-discord text-blue-700"></i>
+      </h2>
+      <div class="2xl:flex xl:ml-10 xl:flex-none">
+        <div class="inline-flex rounded-md bg-white shadow sm:justify-center hover:bg-green-700">
+          <a href="https://discord.gg/gpkV6KNAGU"
+            class="text-gray-700 font-bold py-2 px-6 hover:text-white">
+          Влетаю 🚀
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="hidden min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
+      style="background-image: url(https://images.unsplash.com/photo-1623600989906-6aae5aa131d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1582&q=80);"
+      id="modal-1337">
+      <div class="absolute bg-black opacity-80 inset-0 z-0"></div>
+      <div class="w-full  max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white left-0 top-0 flex justify-center items-center"
+        style="top: 30%;
+        bottom: 50%;">
+        <div class="">
+          <div class="text-center p-5 flex-auto justify-center">
+            <span
+              class="fa fa-info-circle fa-3x w-16 h-16 flex items-center text-green-500 mx-auto "></span>
+            <h2 class="text-xl font-bold py-4 ">
+            Привет 👋</h3>
+            <p class="text-sm text-gray-500 px-8">В данный момент не реализована система
+              автоматического начисления желаемого предмета через веб сайт, вы сможете
+              пополнить кошелёк на сервере и позже купить его. Чтобы пополнить свой донат-счёт
+              вам нужно знать свой SteamID
+            </p>
+          </div>
+          <div class="p-3  mt-2 text-center space-x-4 md:block">
+            <button
+              class="mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-white rounded-full hover:shadow-lg"
+              onclick="ModalClose()">
+            Закрыть
+            </button>
+            <button
+              class="mb-2 md:mb-0 bg-white-500 border border-green-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg"
+              onclick="location.href='https://steamid.xyz'">
+            Узнать свой SteamID
+            </button>
+            <button onclick="location.href='https://gm-donate.ru/donate/5745'"
+              class="mt-4 md:mb-0 bg-green-600 border border-green-600 px-5 py-2 text-sm shadow-sm font-bold tracking-wider text-white rounded-full hover:shadow-lg hover:bg-green-700">Пополнить
+            свой донат-счёт</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function ModalOpen() {
+          var MyModalOpen = document.getElementById("modal-1337");
+          MyModalOpen.classList.remove("hidden");
+          MyModalOpen.classList.add("not-hidden");
+      }
+      
+      function ModalClose() {
+          var MyModalOpen = document.getElementById("modal-1337");
+          MyModalOpen.classList.remove("not-hidden");
+          MyModalOpen.classList.add("hidden");
+      }
+      
+    </script>
+    <script src="js/tailwind-some-scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="../core/other.js"></script>
+  </body>
